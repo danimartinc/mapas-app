@@ -19,7 +19,7 @@ Route navigateMapFadeIn( BuildContext context, Widget page ) {
         //Tween(), permite indicar entre que dos puntos realizamos la opacidad
         opacity: Tween<double>(begin: 0.0, end: 1.0).animate(
           //Indicamos la animación que queremos implementar
-          CurvedAnimation(parent: animation, curve: Curves.easeOut )
+          CurvedAnimation( parent: animation, curve: Curves.easeOut )
         )
       );
     }  

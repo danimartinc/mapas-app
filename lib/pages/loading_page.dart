@@ -20,7 +20,7 @@ class LoadingPage extends StatefulWidget {
 //WidgetsBindingObserver, permite detectar estado de la app cuando se suspende o se reanuda
 class _LoadingPageState extends State<LoadingPage> with WidgetsBindingObserver  {
 
-    @override
+  @override
   void initState() {
     //Inicializamos la unstancia del Observable, mediante this está escuchando si se prodicen cambios en el WidgetsBindingObserver 
     WidgetsBinding.instance!.addObserver(this);

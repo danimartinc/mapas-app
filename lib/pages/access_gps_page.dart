@@ -63,14 +63,14 @@ class _AccessGpsPageState extends State<AccessGpsPage> with WidgetsBindingObserv
               //Modificamos el splash
               splashColor: Colors.transparent,
               onPressed: () async {
+                popup = true;
                 //Extraemos el status del permiso del GPS
                 //Mediante request(), siempre solicito el permiso ya que devuelve un Future
                 final status = await Permission.location.request();
+                await this.accessGPS( status );
 
-                this.accessGPS( status );
-              }
-    
-              
+                popup = false;
+              }  
             )
           ],
         )
@@ -84,7 +84,7 @@ class _AccessGpsPageState extends State<AccessGpsPage> with WidgetsBindingObserv
     
     case PermissionStatus.granted:
       //En el caso de que se otorge el permiso, redirigo hacia la otra pantalla
-      await Navigator.pushReplacementNamed(context, 'map' );
+      await Navigator.pushReplacementNamed(context, 'loading' );
       break;
     
     //En caso de que se encuentre en uno de los siguientes estados, abro las settings
